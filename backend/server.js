@@ -32,3 +32,11 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server Started on port: ${port}`);
 });
+// health check for Kubernetes
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
+app.listen(port, () => {
+  console.log(`Server Started on port: ${port}`);
+});
